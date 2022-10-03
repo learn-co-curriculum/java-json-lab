@@ -21,8 +21,8 @@ public class CustomerDriver {
             System.out.println();
         } while(!input.equalsIgnoreCase("no"));
 
-        writeFile("customer.csv", customers);
-        System.out.println(readFile("customer.csv"));
+        writeFile("customer.json", customers);
+        System.out.println(readFile("customer.json"));
     }
 
     public static String readFile(String filepath) {

@@ -73,11 +73,11 @@ class CustomerDriverTest {
         Path path = Paths.get("test-customer4.json");
         customers.add(ben);
         CustomerDriver.writeFile(path.toString(), customers);
-        String expectedOutput = "[\n{\n" +
-                "\"firstName\":\"Ben\"," +
-                "\n\"lastName\":\"Wyatt\"," +
-                "\n\"mealChoice\":\"calzone\"" +
-                "\n}\n]";
+        String expectedOutput = "[ {\n" +
+                "  \"firstName\" : \"Ben\"," +
+                "\n  \"lastName\" : \"Wyatt\"," +
+                "\n  \"mealChoice\" : \"calzone\"" +
+                "\n} ]";
         try {
             assertEquals(expectedOutput, Files.readString(path));
         } catch (IOException ioException) {
@@ -93,19 +93,19 @@ class CustomerDriverTest {
         customers.add(leslie);
         customers.add(ron);
         CustomerDriver.writeFile(path.toString(), customers);
-        String expectedOutput = "[\n{\n" +
-                "\"firstName\":\"Ben\"," +
-                "\n\"lastName\":\"Wyatt\"," +
-                "\n\"mealChoice\":\"calzone\"" +
-                "\n}\n{\n" +
-                "\"firstName\":\"Leslie\"," +
-                "\n\"lastName\":\"Knope\"," +
-                "\n\"mealChoice\":\"waffles with whipped cream\"" +
-                "\n}\n{\n" +
-                "\"firstName\":\"Ron\"," +
-                "\n\"lastName\":\"Swanson\"," +
-                "\n\"mealChoice\":\"four-horse meals of the egg-pork-alypse\"" +
-                "\n}\n]";
+        String expectedOutput = "[ {\n" +
+                "  \"firstName\" : \"Ben\"," +
+                "\n  \"lastName\" : \"Wyatt\"," +
+                "\n  \"mealChoice\" : \"calzone\"" +
+                "\n}, {\n" +
+                "  \"firstName\" : \"Leslie\"," +
+                "\n  \"lastName\" : \"Knope\"," +
+                "\n  \"mealChoice\" : \"waffles with whipped cream\"" +
+                "\n}, {\n" +
+                "  \"firstName\" : \"Ron\"," +
+                "\n  \"lastName\" : \"Swanson\"," +
+                "\n  \"mealChoice\" : \"four-horse meals of the egg-pork-alypse\"" +
+                "\n} ]";
         try {
             assertEquals(expectedOutput, Files.readString(path));
         } catch (IOException ioException) {
@@ -119,7 +119,7 @@ class CustomerDriverTest {
         Path path = Paths.get("test-customer6.json");
         CustomerDriver.writeFile(path.toString(), customers);
         try {
-            assertEquals(0, Files.size(path));
+            assertEquals("[ ]", Files.readString(path));
         } catch (IOException ioException) {
             fail("Caught exception in testWriteNoCustomers - fail test.");
         }

@@ -1,0 +1,13 @@
+[ {
+  "firstName" : "Ron",
+  "lastName" : "Swanson",
+  "mealChoice" : "four-horse meals of the egg-pork-alypse"
+}, {
+  "firstName" : "Leslie",
+  "lastName" : "Knope",
+  "mealChoice" : "waffles with whipped cream"
+}, {
+  "firstName" : "Ben",
+  "lastName" : "Wyatt",
+  "mealChoice" : "calzone"
+} ]
